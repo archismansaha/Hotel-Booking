@@ -37,13 +37,13 @@ const Homescreen = () => {
       setfilterroom(data1);
       setloading(false);
 
-      //console.log(rooms);
+      ////////console.log(rooms);
 
 
     }
     catch (err) {
       seterror(true);
-      console.log(err);
+      //////console.log(err);
       setloading(false);
     }
   }
@@ -59,41 +59,48 @@ const Homescreen = () => {
 
     
  
-    setfromdate(moment(dates[0]).format('DD-MM-YYYY'))
-    settodate(moment(dates[1]).format('DD-MM-YYYY'))
+    setfromdate(moment(dates[0]).format('YYYY-MM-DD'))
+    settodate(moment(dates[1]).format('YYYY-MM-DD'))
+
+   
     
     var temprooms = [];
-    var availability = false;
+    
 
-    console.log(moment(fromdate))
+ 
 
 
     
    
-
+    
 
     for (const room of filterroom) {
       
-
-
+      
+      var availability = false;
       if (room.currentbookings.length > 0) {
+        
+        
+        for (const booking of room.currentbookings) {  
 
-        for (const booking of room.currentbookings) {
+          availability = false;
          
-          if (!moment(moment(dates[0]).format('DD-MM-YYYY')).isBetween(booking.fromdate, booking.todate) &&
-            !moment(moment(dates[1]).format('DD-MM-YYYY')).isBetween(booking.fromdate, booking.todate)) {
-           
+          if (!moment(moment(dates[0]).format('YYYY-MM-DD')).isBetween(booking.fromdate, booking.todate) &&
+            !moment(moment(dates[1]).format('YYYY-MM-DD')).isBetween(booking.fromdate, booking.todate)) {
 
+
+             ////////console.log(moment(moment(dates[0]).format('YYYY-MM-DD')) .isSame( booking.fromdate));
+             
             if (
 
-              (moment(dates[0]).format('DD-MM-YYYY')) !== booking.fromdate &&
-              (moment(dates[1]).format('DD-MM-YYYY')) !== booking.todate &&
-              (moment(dates[0]).format('DD-MM-YYYY')) !== booking.todate &&
-              (moment(dates[1]).format('DD-MM-YYYY')) !== booking.fromdate
+              (!moment(moment(dates[0]).format('YYYY-MM-DD')).isSame(booking.fromdate)) &&
+              (moment(dates[1]).format('YYYY-MM-DD')) != booking.todate &&
+              (moment(dates[0]).format('YYYY-MM-DD')) != booking.todate &&
+              (moment(dates[1]).format('YYYY-MM-DD')) != booking.fromdate
 
             ) {
 
-
+            
               availability = true;
 
             }
@@ -106,8 +113,8 @@ const Homescreen = () => {
 
       }
      
-      if (availability == true || room.currentbookings.length == 0) {
-        //console.log(room);
+      if (availability === true || room.currentbookings.length === 0) {
+        //////console.log(room);
         temprooms.push(room);
 
 
@@ -119,7 +126,7 @@ const Homescreen = () => {
     }
   
   
-    //console.log(rooms);
+    //////////console.log(rooms);
   }
 
 
@@ -173,7 +180,7 @@ const Homescreen = () => {
 
         <div className="col-md-3">
 
-          <RangePicker format='DD-MM-YYYY' onChange={filterByDate} />
+          <RangePicker format='YYYY-MM-DD' onChange={filterByDate} />
 
         </div>
   <div className="col-md-6 ">

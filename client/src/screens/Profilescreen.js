@@ -59,7 +59,7 @@ const fetchbooking=async ()=>{
        
         
     }catch (err){
-      console.log(err)
+      //console.log(err)
   }
 }
 
@@ -84,7 +84,7 @@ const fetchbooking=async ()=>{
 
  }
  catch(err){
-   console.log(err)
+   //console.log(err)
   Swal.fire('Oops!',"Something went wrong",'error')
 }
 

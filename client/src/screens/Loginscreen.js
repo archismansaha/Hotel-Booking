@@ -26,11 +26,11 @@ const Loginscreen = () => {
     window.location.href='/home'
     }
     else{
-      console.log("NO user")
+      //console.log("NO user")
     }
   }
   catch(err){
-   console.log(err);
+   //console.log(err);
    
 
   }

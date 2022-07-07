@@ -24,7 +24,7 @@ const Registerscreen = () => {
      window.location.href='/home';
    }
    catch(err){
-    console.log(err);
+    //console.log(err);
     
 
    }

@@ -17,8 +17,8 @@ const[room,setroom] =useState([]);
 const[loading,setloading] =useState(true);
 const[error,seterror] =useState();
 
-const momentfromdate=moment(fromdate,'DD-MM-YYYY');
-const momenttodate=moment(todate,'DD-MM-YYYY');
+const momentfromdate=moment(fromdate,'YYYY-MM-DD');
+const momenttodate=moment(todate,'YYYY-MM-DD');
 
 
 
@@ -33,13 +33,13 @@ const momenttodate=moment(todate,'DD-MM-YYYY');
     setroom(data1);
     setloading(false);
      
-    //console.log(rooms);
+    ////console.log(rooms);
   
   
     }
     catch (err){
       seterror(true);
-        console.log(err);
+        //console.log(err);
         setloading(false);
     }
    }
@@ -69,17 +69,17 @@ const momenttodate=moment(todate,'DD-MM-YYYY');
   }
   
   /*for (var i = 0; i < localStorage.length; i++)   {
-    console.log(localStorage.key(i) +  localStorage.getItem(localStorage.key(i)) );
+    //console.log(localStorage.key(i) +  localStorage.getItem(localStorage.key(i)) );
 }
   try{
     
     const result=(await axios.post('/api/booking/bookroom',bookingDetails)).data;
-    console.log(result)
+    //console.log(result)
 
    
   }catch(err){
 
-    console.log(err);
+    //console.log(err);
   }
 
 
@@ -104,7 +104,7 @@ const momenttodate=moment(todate,'DD-MM-YYYY');
   }
   
   /*for (var i = 0; i < localStorage.length; i++)   {
-    console.log(localStorage.key(i) +  localStorage.getItem(localStorage.key(i)) );
+    //console.log(localStorage.key(i) +  localStorage.getItem(localStorage.key(i)) );
 }*/
   try{
     setloading(true);
@@ -118,11 +118,11 @@ const momenttodate=moment(todate,'DD-MM-YYYY');
    
   }catch(err){
     setloading(false);
-    console.log(err);
+    //console.log(err);
     Swal.fire('Oops!',"Something went wrong",'error')
   }
 
-   console.log(token);
+   //console.log(token);
 
 
  }

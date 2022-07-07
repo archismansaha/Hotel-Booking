@@ -67,11 +67,11 @@ export function Bookings() {
     try {
       setloading(true);
       const data1 = (await axios.get("/api/booking/getallbookings")).data;
-      console.log(data1);
+      //console.log(data1);
       setloading(false);
       setbookings(data1);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       setloading(false);
       Swal.fire("Oops!", "Something went wrong", "error");
@@ -150,11 +150,11 @@ export function Rooms() {
       try {
         setloading(true);
         const data1 = (await axios.get("/api/rooms/getallrooms")).data;
-        console.log(data1);
+        //console.log(data1);
         setloading(false);
         setrooms(data1);
       } catch (err) {
-        console.log(err);
+        //console.log(err);
   
         setloading(false);
         Swal.fire("Oops!", "Something went wrong", "error");
@@ -236,11 +236,11 @@ export function Rooms() {
       try {
         setloading(true);
         const data1 = (await axios.get("/api/users/getallusers")).data;
-        console.log(data1);
+        //console.log(data1);
         setloading(false);
         setusers(data1);
       } catch (err) {
-        console.log(err);
+        //console.log(err);
   
         setloading(false);
         Swal.fire("Oops!", "Something went wrong", "error");
@@ -347,7 +347,7 @@ imageurls:[imageurl1,imageurl2,imageurl3]
   try{
 
     const result=await(await axios.post('/api/rooms/addroom',newroom)).data
-    console.log(result)
+    //console.log(result)
     Swal.fire('Congrats',"Room added successfully","success").then(result=>{
       window.location.reload()
     })
@@ -355,7 +355,7 @@ imageurls:[imageurl1,imageurl2,imageurl3]
   }
   catch (err){
 
-    console.log(err);
+    //console.log(err);
   
    
     Swal.fire("Oops!", "Something went wrong", "error");

@@ -12,7 +12,7 @@ router.get('/getallrooms',async(req,res)=>{
      //
     }
     catch(errr){
-        console.log(errr)
+        //console.log(errr)
         return res.status(400).json({message: errr});
     }
 
@@ -29,7 +29,7 @@ router.post('/getroombyid',async(req,res)=>{
      //
     }
     catch(errr){
-        console.log(errr)
+        //console.log(errr)
         return res.status(400).json({message: errr});
     }
 
@@ -44,7 +44,7 @@ router.post('/addroom',async(req,res)=>{
 try{
     
     const room=await newroom.save();
-  console.log(newroom);
+  //console.log(newroom);
     res.send("Room added")
 }catch(errr){
 return  res.status(400).json({message:errr})

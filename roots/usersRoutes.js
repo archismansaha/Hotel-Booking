@@ -13,7 +13,7 @@ router.post('/register',async(req, res)=>{
       res.send("registered")
   }
   catch(err){
-    console.log(errr);
+    //console.log(errr);
     return res.status(400).json({message: errr});
   }
 
@@ -37,14 +37,14 @@ router.post('/login',async(req, res)=>{
 
 
           }
-          console.log(temp);
+          //console.log(temp);
         res.send(temp);}
         else{
             return  res.status(400).json({message: "Login  failed"});
         }
     }
     catch(err){
-      console.log(errr);
+      //console.log(errr);
       return res.status(400).json({message: errr})
     }
   
@@ -66,7 +66,7 @@ router.get('/getallusers',async(req,res)=>{
      //
     }
     catch(errr){
-        console.log(errr)
+        //console.log(errr)
         return res.status(400).json({message: errr});
     }
 

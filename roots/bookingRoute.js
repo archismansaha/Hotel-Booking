@@ -14,7 +14,7 @@ router.post('/bookroom',async(req,res)=>{
     totaldate,
   }
   = req.body;
-  console.log(fromdate);
+  //console.log(fromdate);
 
   try{
     const newbooking=new Booking({
@@ -57,7 +57,7 @@ await roomtemp.save();
    //
   }
   catch(errr){
-      console.log(errr)
+      //console.log(errr)
       return res.status(400).json({message: errr});
   }
 
@@ -70,7 +70,7 @@ const userid=req.body.userid;
 
 try{
   const bookings=await Booking.find({userid:userid})
-  console.log(bookings)
+  //console.log(bookings)
   res.send(bookings);
 }
 catch(err){
@@ -117,11 +117,11 @@ router.get('/getallbookings',async(req,res)=>{
  try{
 
   const bookings=await Booking.find({})
-  console.log("here"+bookings)
+  //console.log("here"+bookings)
   return res.json(bookings)
  }
  catch(err){
-   console.log(err)
+   //console.log(err)
    return  res.status(400).json({message:err})
  }
 
